@@ -1,0 +1,15 @@
+server:
+  port: 80
+eureka:
+  client:
+    register-with-eureka: false   #是否将自己注册到注册中心,集群必须设置为true配合ribbon 默认的就是true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
+    # instance:
+    # instance-id: order80
+    #prefer-ip-address: true   #访问路径可以显示IP地址
+#设置feign客户端默认的超时时间 open feign 默认的是 支持ribbon
+ribbon:
+  ReadTimeout: 5000 # 读取资源
+  ConnectTimeout: 5000 # 建立连接
+
